@@ -14,7 +14,7 @@ Step3. Functional interpretation: <br />
 4) compare target gene expression changes between mutated cells (or samples) and wild-type. 
 <hr>
 
-![image](https://github.com/jjializhu/eMut/blob/main/Figures/eMut_workflow.png)
+![image](https://github.com/xmuhuanglab/eMut/tree/main/Figures/eMut_workflow.png)
 
 ## Tutorial
 The tutorial can be found at [tutorial](https://github.com/jjializhu/eMut/blob/main/eMut_Tutorial.md)
