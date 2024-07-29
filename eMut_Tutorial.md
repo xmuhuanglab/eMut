@@ -4,7 +4,7 @@
 ## Introduction
 The eMut, an integrated pipeline for detecting, imputing, and characterizing non-coding mutations in cis-regulatory elements(CREs) with functional consequences at the single-cell level.
 
-![image](https://github.com/jjializhu/eMut/blob/main/Figures/eMut_workflow.png)
+![image](https://github.com/xmuhuanglab/eMut/blob/main/Figures/eMut_workflow.png)
 
 
 ## workflow
