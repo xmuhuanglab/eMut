@@ -183,7 +183,7 @@ SNV.motifs <- motifbreakR(snpList = snps.mb.frombed, filterp = TRUE,
 Input: <br>
 (1) mutation profile: Combined mutations for samples (or cells) <br>
 (2) mutation annotated file: The data needs to contain information about the mutation and its corresponding target gene (nearest neighbor gene or mutation located enhancer linked gene); <br>
-(2) gene expression matrix : gene-by-sample matrix or gene-by cell matrix; <br>
+(3) gene expression matrix : gene-by-sample matrix or gene-by cell matrix; <br>
 Since we don't have matching single-cell data for mutated cells, here is an example of transcriptome data for the mutated samples.
 ```r
 load("./SNV.Rdata")  # mutation-sample information(from step1.mutation detection)
