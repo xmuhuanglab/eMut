@@ -22,9 +22,9 @@ Input: <br>
 Bam-format files of scATAC-seq data<br>
 As an example, the [Monopogen](https://github.com/KChen-lab/Monopogen) implementation of somatic mutation prediction for a single sample (without matched normal samples), as well as the simultaneous detection of somatic and germline mutations based on [GATK Mutect2](https://github.com/broadinstitute/gatk), are shown here.
 ```
-/eMut/1.run_GATK.py
-/eMut/2.mutation_annotation.py
-/eMut/Mutation_detection.sh
+/MutationDetection/1.run_GATK.py
+/MutationDetection/2.mutation_annotation.py
+/MutationDetection/Mutation_detection.sh
 ```
 
 ### Step2. Mutation imputation (optional)
@@ -41,7 +41,9 @@ library(ggpubr)
 library(ggplot2)
 library(pbapply)
 library(SCAVENGE)
-source("/eMut/R/function/functions.R")
+library(eMut)
+library(Seurat)
+library(Signac)
 
 load("./mutualknn30.Rdata")      # m-knn graph   (see detials in SCAVENGE)
 load("./SNVMat.Rdata")           # mutation-by-cell matrix from the Step1. Mutation detection 
@@ -63,7 +65,7 @@ Input: <br>
 Here is an example demonstration with an ArchR object .
 ```r
 library(ArchR)
-source("/eMut/R/function/functions.R")
+library(eMut)
 
 load("./SNVMat.Rdata")
 proj<- loadArchRProject(path = "./ArchR", force = FALSE, showLogo = FALSE)
@@ -114,9 +116,7 @@ Input: <br>
 library(ActiveDriverWGS)
 library(tidyr)
 library(BSgenome.Hsapiens.UCSC.hg38)
-source("/eMut/R/function/ADWGS_test.r")
-source("/eMut/R/function/activeDriverWGS.r")
-source("/eMut/R/function/fix_all_results.r")
+library(eMut)
 
 ##  load  mutation profile
 mut.df<-data.table::fread(
@@ -136,7 +136,7 @@ colnames(peaks.df)<-c("chr","start","end","id")
 openRegions<-GenomicRanges::GRanges(seqnames=peaks.df$chr, 
                                     IRanges::IRanges(peaks.df$start,peaks.df$end))
 ##  identify hypermutated CREs
-hyperMut<-ActiveDriverWGS(mutations = mut.df,              # mutations
+hyperMut<-ActiveDriverCRE(mutations = mut.df,              # mutations
                          elements = peaks.df,              # Open region as elements 
                          ref_genome = "hg38",              # Reference genome
                          mc.cores=4,                       # Number of threads
@@ -155,6 +155,7 @@ Function parameters are consistent with otifbreakR
 library(motifbreakR)
 library(MotifDb)
 library(BSgenome.Hsapiens.UCSC.hg38)
+library(eMut)
 
 ##   change mutation format
 load("./SNV.Rdata")
