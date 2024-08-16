@@ -17,11 +17,11 @@ Step3. Functional interpretation: <br />
 ![image](https://github.com/xmuhuanglab/eMut/blob/main/Figures/eMut_workflow.png)
 
 ## Installation
-1.Create a new environment for
+1.Create a new environment for eMut
 ```
 conda env create -f env.yml
 ```
-2.To install the eMut package, you can run the following commands in R:
+2.To install the eMut R package, you can run the following commands in environment of R:
 ```
 devtools::install_github("xmuhuanglab/eMut")
 ```
