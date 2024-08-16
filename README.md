@@ -31,7 +31,7 @@ if(!requireNamespace("devtools", quietly = TRUE)){
     install.packages("devtools") 
 } 
 devtools::install_github("GreenleafLab/ArchR", ref="master", repos = BiocManager::repositories())
-install.packages('ActiveDriverWGS')
+devtools::install_github('https://github.com/reimandlab/ActiveDriverWGSR')
 ```
 
 ## Tutorial
