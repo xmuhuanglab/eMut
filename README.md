@@ -29,7 +29,6 @@ conda install r-signac
 ```
 devtools::install_github("xmuhuanglab/eMut")
 ```
-
 4.Dependency packages installation in environment of R:
 ```
 if(!requireNamespace("devtools", quietly = TRUE)){
