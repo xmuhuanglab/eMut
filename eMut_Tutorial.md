@@ -128,7 +128,7 @@ mut.df<-mut.df[mut.df$FILTER=="PASS",]
 mut.df<-mut.df[,c("Chromosome","Start_Position","End_Position",
                              "Reference_Allele","Tumor_Seq_Allele2","Tumor_Sample_Barcode")]
 colnames(mut.df)<-c("chr","pos1","pos2","ref","alt","patient")
-mut.df<-mut.[df$chr!="chrM",]
+mut.df<-mut.df[mut.df$chr!="chrM",]
 
 ##  load peak
 peaks.df<-read.table("./peaks.bed",header=F,quote="",sep="\t")
@@ -143,7 +143,7 @@ hyperMut<-ActiveDriverCRE(mutations = mut.df,              # mutations
                          window_size=1000000,              # The window size of flanking region as background 
                          detect_depleted_mutations=FALSE,  # The detection of hypomutated region
                          openRegions = openRegions,        # all open regions (union of all peaks)
-                         recovery.dir=paste0("./tmp/",x))  # Temporary file paths to quickly recover results
+                         recovery.dir="./tmp/")  # Temporary file paths to quickly recover results
 
 ```
 ####  (3) prediction of TF binding motif change
