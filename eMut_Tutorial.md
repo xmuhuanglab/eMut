@@ -150,7 +150,7 @@ hyperMut<-ActiveDriverCRE(mutations = mut.df,              # mutations
 To explore the impact of mutations in their located enhancer, [motifbreakR](https://github.com/Simon-Coetzee/motifBreakR) was applied to predict TF motif disruptions (loss or gain) for a large number of single-nucleotide variants using several different sources of TF motifs (e.g. JASPAR and ENCODE). In the predicted results, "strong" effect motif change will be considered as the potential impact of mutations.
 Input: <br>
 (1) mutation profile: mutation file(VCf/maf format); <br>
-Function parameters are consistent with otifbreakR
+Function parameters are consistent with motifbreakR
 ```r
 library(motifbreakR)
 library(MotifDb)
