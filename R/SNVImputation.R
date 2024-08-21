@@ -34,17 +34,20 @@ SNVImputation<-function(countMatrix,
                        TF=TRUE,
                        log_TF=TRUE)
 
-    lsi.mat <- do_lsi(mat = tfidf.mat, dims = 30)
-    mutualknn <- getmutualknn(lsimat = lsi.mat, num_k = 30)
+    lsi.mat <- do_lsi(mat = tfidf.mat, dims = numk)
+    mutualknn <- getmutualknn(lsimat = lsi.mat, num_k = numk)
     cells<-sapply(strsplit(rownames(mutualknn),split="_"),function(x){x[1]}) %>% unlist()
   }else{
     print("KNN Neighborhood Graphs:")
     mutualknn <- knnGraph
     cells<-sapply(strsplit(rownames(mutualknn),split="_"),function(x){x[1]}) %>% unlist()
   }
-
+  
   ### 2) imputation
-  print(paste0("Imputation for",length(mutations),"mutations"))
+  if(is.null(row.names(SNVMatrix))){
+    stop("please add mutation identifiers to the rownames of SNVMatrix")
+  }
+  print(paste("Imputation for",length(mutations),"mutations"))
   TRS.list<-pblapply(mutations,function(x){
     ##  mutant cells as seed cells
     seed.cells<-colnames(SNVMatrix)[which(SNVMatrix[x,]=="0/1" | SNVMatrix[x,]=="1/1")]
