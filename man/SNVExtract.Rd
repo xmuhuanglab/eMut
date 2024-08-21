@@ -4,10 +4,10 @@
 \alias{SNVExtract}
 \title{SNV extract}
 \usage{
-SNVExtract(inputDir)
+SNVExtract(inputDirs)
 }
 \arguments{
-\item{inputDir}{direction of somatic mutations of Monopogen output}
+\item{inputDirs}{direction of somatic mutations of Monopogen output(named strings or named strings vector)}
 }
 \description{
 extract SNV from Monopogen outputs
