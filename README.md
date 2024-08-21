@@ -35,7 +35,7 @@ devtools::install_github('https://github.com/reimandlab/ActiveDriverWGSR')
 ```
 
 ## Tutorial
-The tutorial can be found at [tutorial](https://github.com/xmuhuanglab/eMut/blob/main/eMut_Tutorial.md)
+The tutorial can be found at [tutorial](https://github.com/xmuhuanglab/eMut/blob/main/eMut_Tutorial.ipynb)
 
 ## Contact
 For any inquiries or assistance, please feel free to open an issue.
