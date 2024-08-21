@@ -1,6 +1,6 @@
 Package: eMut
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Version: 1.0
 Authors@R: 
     person("Jiali", "zhu", , "zjl152565@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0005-3578-5877"))
