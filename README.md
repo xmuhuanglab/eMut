@@ -39,3 +39,7 @@ The tutorial can be found at [tutorial](https://github.com/xmuhuanglab/eMut/blob
 
 ## Contact
 For any inquiries or assistance, please feel free to open an issue.
+
+## How to cite eMut
+Zhu, M., Zhu, J., Zhu, Z. et al. Discovery of candidate functional non-coding mutations in acute myeloid leukemia using single-cell chromatin accessibility sequencing. Commun Biol 8, 808 (2025). https://doi.org/10.1038/s42003-025-08257-8
+
